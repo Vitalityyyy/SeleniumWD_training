@@ -103,7 +103,8 @@ namespace SelemiumWD2_litecart
             var products = driver.FindElements(By.CssSelector("[class^=product]"));
             foreach (IWebElement product in products)
             {
-                Assert.IsTrue(IsElementPresent(By.CssSelector("[class^=sticker]")));
+                var stickers = product.FindElements(By.CssSelector("[class^=sticker]"));
+                Assert.That(stickers.Count == 1);
             }
         }
     }
