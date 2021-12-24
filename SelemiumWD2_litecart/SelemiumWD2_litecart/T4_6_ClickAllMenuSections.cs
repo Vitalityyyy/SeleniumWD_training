@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -10,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace SelemiumWD2_litecart
 {
     [TestFixture]
-    public class UnitTest1
+    public class T4_6_ClickAllMenuSections
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -28,15 +26,11 @@ namespace SelemiumWD2_litecart
         }
 
         [Test]
-        public void LoginTest()
+        public void ClickAllMenuSectionsTest()
         {
-            driver.Navigate().GoToUrl("http://localhost/litecart/admin/");
-            driver.FindElement(By.Name("username")).Click();
-            driver.FindElement(By.Name("username")).Clear();
-            driver.FindElement(By.Name("username")).SendKeys("admin");
-            driver.FindElement(By.Name("password")).Clear();
-            driver.FindElement(By.Name("password")).SendKeys("admin");
-            driver.FindElement(By.Name("login")).Click();
+            GoToHomepage();
+            Login();
+            ClickAllMenuSections();
         }
 
         private bool IsElementPresent(By by)
@@ -100,6 +94,35 @@ namespace SelemiumWD2_litecart
             }
             Assert.AreEqual("", verificationErrors.ToString());
         }
-
+        public void GoToHomepage()
+        {
+            driver.Navigate().GoToUrl("http://localhost/litecart/admin/");
+        }
+        public void Login()
+        {
+            driver.FindElement(By.Name("username")).Click();
+            driver.FindElement(By.Name("username")).Clear();
+            driver.FindElement(By.Name("username")).SendKeys("admin");
+            driver.FindElement(By.Name("password")).Clear();
+            driver.FindElement(By.Name("password")).SendKeys("admin");
+            driver.FindElement(By.Name("login")).Click();
+        }
+        public void ClickAllMenuSections()
+        {
+            var topMenuList0 = driver.FindElements(By.Id("app-"));
+            for (int i = 0; i < topMenuList0.Count; i++)
+            {
+                var topMenuList = driver.FindElements(By.Id("app-"));
+                topMenuList[i].Click();
+                Assert.IsTrue(IsElementPresent(By.CssSelector("h1")));
+                var subMenuList0 = driver.FindElements(By.CssSelector("[id^=doc]"));
+                for (int n = 0; n < subMenuList0.Count; n++)
+                {
+                    var subMenuList = driver.FindElements(By.CssSelector("[id^=doc]"));
+                    subMenuList[n].Click();
+                    Assert.IsTrue(IsElementPresent(By.CssSelector("h1")));
+                }
+            }
+        }
     }
 }

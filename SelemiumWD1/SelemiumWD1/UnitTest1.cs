@@ -5,6 +5,9 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumWD1
@@ -18,7 +21,9 @@ namespace SeleniumWD1
         [SetUp]
         public void start()
         {
-            driver = new FirefoxDriver(@"C:\distr");
+            FirefoxOptions options = new FirefoxOptions();
+            options.BrowserExecutableLocation = @"c:\Program Files\Firefox Nightly\firefox.exe";
+            driver = new FirefoxDriver(@"C:\distr", options);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
@@ -26,7 +31,7 @@ namespace SeleniumWD1
         public void OpenBrowserPage()
         {
             //driver.Url = "https://github.com/";
-            driver.Navigate().GoToUrl("https://github.com/");
+            driver.Navigate().GoToUrl("https://www.google.ru/");
         }
 
         [TearDown]
