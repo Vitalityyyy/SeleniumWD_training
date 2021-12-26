@@ -100,10 +100,10 @@ namespace SelemiumWD2_litecart
         }
         public void CheckStickers()
         {
-            var products = driver.FindElements(By.CssSelector("[class^=product]"));
+            var products = driver.FindElements(By.CssSelector(".product"));
             foreach (IWebElement product in products)
             {
-                var stickers = product.FindElements(By.CssSelector("[class^=sticker]"));
+                var stickers = product.FindElements(By.CssSelector(".sticker"));
                 Assert.That(stickers.Count == 1);
             }
         }
