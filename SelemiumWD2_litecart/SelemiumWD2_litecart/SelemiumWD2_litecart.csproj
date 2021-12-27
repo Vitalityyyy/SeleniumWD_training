@@ -63,6 +63,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="T4_6_ClickAllMenuSections.cs" />
     <Compile Include="T4_7_Stickerscheck.cs" />
+    <Compile Include="T5_8_CountriesAlphabetically.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
