@@ -64,6 +64,7 @@
     <Compile Include="T4_6_ClickAllMenuSections.cs" />
     <Compile Include="T4_7_Stickerscheck.cs" />
     <Compile Include="T5_8_CountriesAlphabetically.cs" />
+    <Compile Include="T5_9_ZonesAlphabetically.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
