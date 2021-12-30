@@ -27,7 +27,7 @@ namespace SelemiumWD2_litecart
         }
 
         [Test]
-        public void CountriesAlphabeticallyTest()
+        public void ZonesAlphabeticallyTest()
         {
             GoToHomepage();
             Login();
