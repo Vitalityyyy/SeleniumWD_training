@@ -128,7 +128,11 @@ namespace SelemiumWD2_litecart
                     string zoneText = zoneName.FindElement(By.XPath(".//option[@selected='selected']")).Text;
                     zoneTextList.Add(zoneText);
                 }
-                List<string> zoneTextListSorted = zoneTextList;
+                List<string> zoneTextListSorted = new List<string>(zoneTextList.Count);
+                zoneTextList.ForEach((item) =>
+                {
+                    zoneTextListSorted.Add((string)item.Clone());
+                });
                 zoneTextListSorted.Sort();
                 Assert.AreEqual(zoneTextList, zoneTextListSorted);
                 GoToGeoZonesPage();
