@@ -66,7 +66,9 @@
     <Compile Include="T5_10_ProductPageDataFirefox.cs" />
     <Compile Include="T5_10_ProductPageDataChrome.cs" />
     <Compile Include="T5_8_CountriesAlphabetically.cs" />
+    <Compile Include="T6_12_AddProduct.cs" />
     <Compile Include="T5_9_ZonesAlphabetically.cs" />
+    <Compile Include="T6_11_Registration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

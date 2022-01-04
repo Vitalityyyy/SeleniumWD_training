@@ -123,7 +123,11 @@ namespace SelemiumWD2_litecart
                 string countryText = countryRow.FindElement(By.XPath("./td[5]")).Text;
                 countryTextList.Add(countryText);
             }
-            List<string> countryTextListSorted = countryTextList;
+            List<string> countryTextListSorted = new List<string>(countryTextList.Count);
+            countryTextList.ForEach((item) =>
+            {
+                countryTextListSorted.Add((string)item.Clone());
+            });
             countryTextListSorted.Sort();
             Assert.AreEqual(countryTextList, countryTextListSorted);
         }
@@ -145,7 +149,11 @@ namespace SelemiumWD2_litecart
                         zoneTextList.Add(zoneText);
                     }
                     zoneTextList.RemoveAt(zoneTextList.Count - 1);
-                    List<string> zoneTextListSorted = zoneTextList;
+                    List<string> zoneTextListSorted = new List<string>(zoneTextList.Count);
+                    zoneTextList.ForEach((item) =>
+                    {
+                        zoneTextListSorted.Add((string)item.Clone());
+                    });
                     zoneTextListSorted.Sort();
                     Assert.AreEqual(zoneTextList, zoneTextListSorted);
                     GoToCountriesPage();
