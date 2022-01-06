@@ -142,12 +142,9 @@ namespace SelemiumWD2_litecart
             driver.FindElement(By.XPath("//div[@id='tab-general']/table/tbody/tr[7]/td/div/table/tbody/tr[4]/td/input")).Click();
             driver.FindElement(By.Name("quantity")).Clear();
             driver.FindElement(By.Name("quantity")).SendKeys("1");
-
-            //string relativePath = "./SelemiumWD2_litecart/SelemiumWD2_litecart/product_pic.jpg";
-            //string fullPath;
-            //fullPath = Path.GetFullPath(relativePath);
-            //driver.FindElement(By.Name("new_images[]")).SendKeys(fullPath);
-
+            string relativePath = "./product_pic.jpg";
+            string fullPath = Path.GetFullPath(relativePath);
+            driver.FindElement(By.Name("new_images[]")).SendKeys(fullPath);
             driver.FindElement(By.Name("date_valid_from")).Clear();
             driver.FindElement(By.Name("date_valid_from")).SendKeys("2022-02-01");
             driver.FindElement(By.Name("date_valid_to")).Clear();
