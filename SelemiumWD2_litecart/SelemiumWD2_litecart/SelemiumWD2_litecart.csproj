@@ -69,6 +69,7 @@
     <Compile Include="T5_10_ProductPageDataFirefox.cs" />
     <Compile Include="T5_10_ProductPageDataChrome.cs" />
     <Compile Include="T5_8_CountriesAlphabetically.cs" />
+    <Compile Include="T10_17_LogsAreAbsent.cs" />
     <Compile Include="T8_14_LinksInANewWindow.cs" />
     <Compile Include="T7_13_Cart.cs" />
     <Compile Include="T6_12_AddProduct.cs" />
