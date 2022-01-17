@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C90E4C1D-AA67-4204-BAF2-CBF950860265}</ProjectGuid>
+    <ProjectGuid>{095110A9-F190-4C0A-A144-063BDF612C87}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SeleniumWD3_PageObjects</RootNamespace>
-    <AssemblyName>SeleniumWD3_PageObjects</AssemblyName>
+    <RootNamespace>SeleniumWD2_litecart</RootNamespace>
+    <AssemblyName>SeleniumWD2_litecart</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -62,16 +62,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application.cs" />
-    <Compile Include="Pages\CartPage.cs" />
-    <Compile Include="Pages\MainPage.cs" />
-    <Compile Include="Pages\ProductPage.cs" />
-    <Compile Include="T7_13_CartTest.cs" />
+    <Compile Include="T10_17_LogsAreAbsent.cs" />
+    <Compile Include="T2_3_LoginTest.cs" />
+    <Compile Include="T4_6_ClickAllMenuSections.cs" />
+    <Compile Include="T4_7_Stickerscheck.cs" />
+    <Compile Include="T5_10_ProductPageDataChrome.cs" />
+    <Compile Include="T5_10_ProductPageDataFirefox.cs" />
+    <Compile Include="T5_8_CountriesAlphabetically.cs" />
+    <Compile Include="T5_9_ZonesAlphabetically.cs" />
+    <Compile Include="T6_11_Registration.cs" />
+    <Compile Include="T6_12_AddProduct.cs" />
+    <Compile Include="T7_13_Cart.cs" />
+    <Compile Include="T8_14_LinksInANewWindow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="product_pic.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
